@@ -11,11 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Docker Login
-      run: docker login docker.pkg.github.com -u soletan -p $GITHUB_TOKEN
+      run: docker login -u soletan -p $DOCKER_HUB_TOKEN
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
     - name: Docker Build
-      run: docker build --tag docker.pkg.github.com/cepharum/docker-smtp/smtp:latest .
+      run: docker build --tag cepharum/smtp:latest .
     - name: Docker Publish
-      run: docker push docker.pkg.github.com/cepharum/docker-smtp/smtp:latest
+      run: docker push cepharum/smtp:latest
 
