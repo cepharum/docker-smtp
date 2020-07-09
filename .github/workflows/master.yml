@@ -18,3 +18,4 @@ jobs:
       run: docker build --tag docker.pkg.github.com/cepharum/docker-smtp/smtp:latest .
     - name: Docker Publish
       run: docker push docker.pkg.github.com/cepharum/docker-smtp/smtp:latest
+
